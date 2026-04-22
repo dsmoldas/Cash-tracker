@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Cash_Tracker.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Cash_Tracker"
+    xmlns:pages="clr-namespace:Cash_Tracker.Resources.Pages">
+
+    <TabBar>
+        <Tab Icon="homeicon.png" Title="Domů">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+        </Tab>
+
+        <Tab Icon="taskicon.png" Title="Data">
+            <ShellContent ContentTemplate="{DataTemplate pages:DataPage}" Route="DataPage"/>
+        </Tab>
+
+        <Tab Icon="plusicon.png" Title="Přidat">
+            <ShellContent ContentTemplate="{DataTemplate pages:AddPage}" Route="AddPage"/>
+        </Tab>
+
+        <Tab Icon="settingsicon.png" Title="Nastavení">
+            <ShellContent ContentTemplate="{DataTemplate pages:SettingsPage}" Route="SettingsPage"/>
+        </Tab>
+    </TabBar>
+</Shell>

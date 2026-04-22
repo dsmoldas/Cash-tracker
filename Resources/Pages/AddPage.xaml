@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:shimer="clr-namespace:Syncfusion.Maui.Toolkit.Shimmer;assembly=Syncfusion.Maui.Toolkit"
+             x:Class="Cash_Tracker.Resources.Pages.AddPage">
+
+    <shimer:SfShimmer x:Name="Shimmer" WaveDirection="Default" BackgroundColor="{StaticResource OffBlack}" WaveColor="{StaticResource Gray500}" Fill="{StaticResource Gray600}">
+        <shimer:SfShimmer.CustomView>
+            <VerticalStackLayout Margin="10, 75" HorizontalOptions="Center">
+                <Grid ColumnDefinitions="150, 150" ColumnSpacing="60" HeightRequest="45">
+                    <BoxView BackgroundColor="{StaticResource Gray600}" CornerRadius="12" WidthRequest="130" Grid.Column="0"/>
+                    <BoxView BackgroundColor="{StaticResource Gray600}" CornerRadius="12" WidthRequest="130" Grid.Column="1"/>
+                </Grid>
+
+                <VerticalStackLayout HorizontalOptions="Center" Margin="0, 75, 0, 0" Spacing="50">
+                    <Grid ColumnDefinitions="60, 200" ColumnSpacing="20" HeightRequest="45">
+                        <BoxView BackgroundColor="{StaticResource Gray600}" CornerRadius="10" Grid.Column="0"/>
+                        <BoxView BackgroundColor="{StaticResource Gray600}" CornerRadius="10" Grid.Column="1"/>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="60, 200" ColumnSpacing="20" HeightRequest="45">
+                        <BoxView BackgroundColor="{StaticResource Gray600}" CornerRadius="10" Grid.Column="0"/>
+                        <BoxView BackgroundColor="{StaticResource Gray600}" CornerRadius="10" Grid.Column="1"/>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="60, 200" ColumnSpacing="20" HeightRequest="45">
+                        <BoxView BackgroundColor="{StaticResource Gray600}" CornerRadius="10" Grid.Column="0"/>
+                        <BoxView BackgroundColor="{StaticResource Gray600}" CornerRadius="10" Grid.Column="1"/>
+                    </Grid>
+                </VerticalStackLayout>
+
+                <BoxView BackgroundColor="{StaticResource Gray600}" CornerRadius="15" Margin="0, 50" HeightRequest="50"/>
+            </VerticalStackLayout>
+        </shimer:SfShimmer.CustomView>
+        
+        <VerticalStackLayout x:Name="Obsah" Margin="10, 75" HorizontalOptions="Center">
+            <Grid ColumnDefinitions="150, 150" ColumnSpacing="60">
+                <Button x:Name="BtnPrijmy" Text="Příjmy" Grid.Column="0" Clicked="BtnPrijmy_Clicked" BackgroundColor="#ac99ea" TextColor="Black"/>
+
+                <Button x:Name="BtnVydaje" Text="Výdaje" Grid.Column="1" Clicked="BtnVydaje_Clicked" BackgroundColor="#8B009C" TextColor="WhiteSmoke"/>
+            </Grid>
+
+            <StackLayout x:Name="FormVydaje" HorizontalOptions="Center" Margin="0, 75, 0, 0" Spacing="50">
+                <Grid ColumnDefinitions="60, 200" ColumnSpacing="20">
+                    <Label Text="Částka:" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                    <Entry x:Name="ECastka" Keyboard="Numeric" Placeholder="Částka" MaxLength="15" WidthRequest="200" Grid.Column="1" HorizontalTextAlignment="Center"/>
+                </Grid>
+
+                <Grid ColumnDefinitions="60, 200" ColumnSpacing="20">
+                    <Label Text="Datum:" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                    <DatePicker x:Name="DataPiDatum" Grid.Column="1" WidthRequest="200" Format="d" HorizontalOptions="Center"/>
+                </Grid>
+
+                <Grid ColumnDefinitions="60, 200" ColumnSpacing="20">
+                    <Label Text="Kategorie:" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                    <Picker Title="Kategorie" x:Name="PiKategorie" Grid.Column="1" WidthRequest="200" HorizontalTextAlignment="Center"/>
+                </Grid>
+            </StackLayout>
+
+            <Button Text="Přidat záznam" Clicked="Button_Clicked" Margin="0, 50"/>
+        </VerticalStackLayout>
+    </shimer:SfShimmer>
+</ContentPage>
